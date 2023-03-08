@@ -7,6 +7,8 @@ public class MarbleCameraController : MonoBehaviour
     [SerializeField]
     private Transform _target;
     [SerializeField]
+    private float _xDistance;
+    [SerializeField]
     private float _zDistance;
     [SerializeField]
     private float _yDistance;
@@ -14,6 +16,7 @@ public class MarbleCameraController : MonoBehaviour
     void Update()
     {
         Vector3 p = _target.position;
+        p.x = p.x - _xDistance;
         p.z = p.z - _zDistance;
         p.y += _yDistance;
         transform.position = p;
